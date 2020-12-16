@@ -12,7 +12,7 @@ pipeline {
           
        stage("test") {
          steps {
-         echo 'testing the application'
+         build 'CI on local machine'
             } 
           }
           
