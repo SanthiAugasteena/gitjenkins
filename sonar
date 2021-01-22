@@ -6,6 +6,11 @@ pipeline {
      
       stage("build") {
          steps {
+         echo "biuld"
+            } 
+          }
+          stage("code checkout") {
+         steps {
          build 'sonar_freestyle'
             } 
           }
