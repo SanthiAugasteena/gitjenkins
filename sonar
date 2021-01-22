@@ -31,7 +31,7 @@ pipeline {
           
           stage("deploy") {
          steps {
-         echo "deploying"
+         bat 'start java -jar -Dserver.port=8082 C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\build\\target\\spring-petclinic-2.4.0.BUILD-SNAPSHOT.jar'
             } 
           }
           
