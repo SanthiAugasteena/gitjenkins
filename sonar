@@ -4,14 +4,46 @@ pipeline {
   
      stages {
      
-      stage("build") {
+     stage("code checkout") {
          steps {
-         echo "biuld"
+         git branch: 'main', url: 'https://github.com/spring-projects/spring-petclinic.git'
             } 
           }
-          stage("code checkout") {
+          
+      stage("build") {
          steps {
-         build 'sonar_freestyle'
+         build 'build'
+            } 
+          }
+          
+          stage("unit test") {
+         steps {
+         echo "unit testing"
+         sleep 10
+            } 
+          }
+        
+        stage("code quality test") {
+         steps {
+         build 'petclinic_sonar'
+            } 
+          }
+          
+          stage("deploy") {
+         steps {
+         echo "deploying"
+            } 
+          }
+          
+          stage("functional test") {
+         steps {
+         echo "functional testing"
+            } 
+          }
+          
+          stage("performance test") {
+         steps {
+         echo "performance testing"
             } 
           }
      }
