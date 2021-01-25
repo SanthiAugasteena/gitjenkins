@@ -37,7 +37,7 @@ pipeline {
           
           stage("functional test") {
          steps {
-         echo "functional testing"
+         build 'petclinic_tosca'
             } 
           }
           
